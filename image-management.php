@@ -1,7 +1,7 @@
 <?php
 /**
  *     Easy image slideshow
- *     Copyright (C) 2012  www.gopiplus.com
+ *     Copyright (C) 2011 - 2013 www.gopiplus.com
  *     http://www.gopiplus.com/work/2012/06/20/easy-image-slideshow-wordpress-plugin/
  * 
  *     This program is free software: you can redistribute it and/or modify
@@ -165,8 +165,10 @@
         <?php $i = $i+1; } ?>
       </table>
       <br />
-      Check the official page for live demo and more help <a href="http://www.gopiplus.com/work/2012/06/20/easy-image-slideshow-wordpress-plugin/">click here</a>  <br />
-	  Note: Don't upload your original images into plug-in folder. if you upload the images into plug-in folder, you may lose the images when you update the plug-in to next version.   
+	  <ul>
+      	<li>Check the official page for live demo and more help <a target="_blank" href="http://www.gopiplus.com/work/2012/06/20/easy-image-slideshow-wordpress-plugin/">click here</a></li>
+	  	<li>Note: Don't upload your original images into plug-in folder. if you upload the images into plug-in folder, you may lose the images when you update the plug-in to next version.   </li>
+	  </ul>
     </form>
   </div>
 </div>

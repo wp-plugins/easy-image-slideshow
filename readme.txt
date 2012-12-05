@@ -5,8 +5,8 @@ Author URI: http://www.gopiplus.com/work/2012/06/20/easy-image-slideshow-wordpre
 Plugin URI: http://www.gopiplus.com/work/2012/06/20/easy-image-slideshow-wordpress-plugin/
 Tags: plugin, widget, image, slideshow, gallery
 Requires at least: 3.0
-Tested up to: 3.4.2
-Stable tag: 4.0
+Tested up to: 3.5
+Stable tag: 4.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -71,6 +71,10 @@ New demo link
 
 Tested up to 3.4.2
 
+= Version 4.1 =
+
+Tested up to 3.5
+
 == Upgrade Notice ==
 
 = Version 1.0 =
@@ -88,3 +92,7 @@ New demo link
 = Version 4.0 =
 
 Tested up to 3.4.2
+
+= Version 4.1 =
+
+Tested up to 3.5
