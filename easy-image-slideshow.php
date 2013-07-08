@@ -5,7 +5,7 @@ Plugin Name: Easy image slideshow
 Plugin URI: http://www.gopiplus.com/work/2012/06/20/easy-image-slideshow-wordpress-plugin/
 Description: This is a lightweight JavaScript slideshow with manual navigation option. You can use this slideshow, if you need the manual navigation image gallery.
 Author: Gopi.R
-Version: 4.1
+Version: 5.0
 Author URI: http://www.gopiplus.com/work/
 Donate link: http://www.gopiplus.com/work/2012/06/20/easy-image-slideshow-wordpress-plugin/
 Tags: easy, slideshow, images
@@ -15,7 +15,10 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 global $wpdb, $wp_version;
 define("wp_easy_table", $wpdb->prefix . "easyimage_slideshow");
-
+define("easyimage_UNIQUE_NAME", "easy-image-slideshow");
+define("easyimage_TITLE", "Easy image slideshow");
+define('easyimage_FAV', 'http://www.gopiplus.com/work/2012/06/20/easy-image-slideshow-wordpress-plugin/');
+define('easyimage_LINK', 'Check official website for more information <a target="_blank" href="'.easyimage_FAV.'">click here</a>');
 
 if ( ! defined( 'EASYIMAGE_PLUGIN_BASENAME' ) )
 	define( 'EASYIMAGE_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
@@ -138,7 +141,23 @@ function easyimage_install()
 
 function easyimage_admin_options() 
 {
-	include_once("image-management.php");
+	global $wpdb;
+	$current_page = isset($_GET['ac']) ? $_GET['ac'] : '';
+	switch($current_page)
+	{
+		case 'edit':
+			include('pages/image-management-edit.php');
+			break;
+		case 'add':
+			include('pages/image-management-add.php');
+			break;
+		case 'set':
+			include('pages/widget-setting.php');
+			break;
+		default:
+			include('pages/image-management-show.php');
+			break;
+	}
 }
 
 function easyimage_shortcode( $atts ) 
@@ -219,7 +238,7 @@ function easyimage_shortcode( $atts )
 
 function easyimage_deactivation() 
 {
-
+	// No action required.
 }
 
 function easyimage_add_javascript_files() 
@@ -234,7 +253,7 @@ function easyimage_add_to_menu()
 {
 	if (is_admin()) 
 	{
-		add_options_page('Easy image slideshow', 'Easy slideshow', 'manage_options', __FILE__, 'easyimage_admin_options' );
+		add_options_page('Easy image slideshow', 'Easy slideshow', 'manage_options', 'easy-image-slideshow', 'easyimage_admin_options' );
 	}
 }
 

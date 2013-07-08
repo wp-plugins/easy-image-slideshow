@@ -21,7 +21,7 @@ function easyimage_submit()
 {
 	if(document.easyimage_form.easyimage_location.value=="")
 	{
-		alert("Please enter the image folder (where you have your images).")
+		alert("Please enter the image folder location (where you have your images).")
 		document.easyimage_form.easyimage_location.focus();
 		return false;
 	}
@@ -45,14 +45,14 @@ function easyimage_delete(id)
 {
 	if(confirm("Do you want to delete this record?"))
 	{
-		document.frm_easyimage_display.action="options-general.php?page=easy-image-slideshow/easy-image-slideshow.php&AC=DEL&DID="+id;
+		document.frm_easyimage_display.action="options-general.php?page=easy-image-slideshow&ac=del&did="+id;
 		document.frm_easyimage_display.submit();
 	}
 }	
 
 function easyimage_redirect()
 {
-	window.location = "options-general.php?page=easy-image-slideshow/easy-image-slideshow.php";
+	window.location = "options-general.php?page=easy-image-slideshow";
 }
 
 function easyimage_help()
