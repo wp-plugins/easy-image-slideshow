@@ -1,11 +1,10 @@
 <?php
-
 /*
 Plugin Name: Easy image slideshow
 Plugin URI: http://www.gopiplus.com/work/2012/06/20/easy-image-slideshow-wordpress-plugin/
 Description: This is a lightweight JavaScript slideshow with manual navigation option. You can use this slideshow, if you need the manual navigation image gallery.
 Author: Gopi.R
-Version: 5.0
+Version: 5.1
 Author URI: http://www.gopiplus.com/work/
 Donate link: http://www.gopiplus.com/work/2012/06/20/easy-image-slideshow-wordpress-plugin/
 Tags: easy, slideshow, images
@@ -15,10 +14,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 global $wpdb, $wp_version;
 define("wp_easy_table", $wpdb->prefix . "easyimage_slideshow");
-define("easyimage_UNIQUE_NAME", "easy-image-slideshow");
-define("easyimage_TITLE", "Easy image slideshow");
-define('easyimage_FAV', 'http://www.gopiplus.com/work/2012/06/20/easy-image-slideshow-wordpress-plugin/');
-define('easyimage_LINK', 'Check official website for more information <a target="_blank" href="'.easyimage_FAV.'">click here</a>');
+define('EASYIMAGE_FAV', 'http://www.gopiplus.com/work/2012/06/20/easy-image-slideshow-wordpress-plugin/');
 
 if ( ! defined( 'EASYIMAGE_PLUGIN_BASENAME' ) )
 	define( 'EASYIMAGE_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
@@ -31,6 +27,9 @@ if ( ! defined( 'EASYIMAGE_PLUGIN_DIR' ) )
 
 if ( ! defined( 'EASYIMAGE_PLUGIN_URL' ) )
 	define( 'EASYIMAGE_PLUGIN_URL', WP_PLUGIN_URL . '/' . EASYIMAGE_PLUGIN_NAME );
+	
+if ( ! defined( 'EASYIMAGE_ADMIN_URL' ) )
+	define( 'EASYIMAGE_ADMIN_URL', get_option('siteurl') . '/wp-admin/options-general.php?page=easy-image-slideshow' );
 
 function easyimage_plugin_path( $path = '' ) {
 	return path_join( EASYIMAGE_PLUGIN_DIR, trim( $path, '/' ) );
@@ -245,7 +244,7 @@ function easyimage_add_javascript_files()
 {
 	if (!is_admin())
 	{
-		wp_enqueue_script( 'easy-image-slideshow', get_option('siteurl').'/wp-content/plugins/easy-image-slideshow/easy-image-slideshow.js');
+		wp_enqueue_script( 'easy-image-slideshow', EASYIMAGE_PLUGIN_URL.'/easy-image-slideshow.js');
 	}	
 }
 
@@ -253,7 +252,8 @@ function easyimage_add_to_menu()
 {
 	if (is_admin()) 
 	{
-		add_options_page('Easy image slideshow', 'Easy slideshow', 'manage_options', 'easy-image-slideshow', 'easyimage_admin_options' );
+		add_options_page( __('Easy image slideshow', 'easy-image-slideshow'), 
+			__('Easy image slideshow', 'easy-image-slideshow'), 'manage_options', 'easy-image-slideshow', 'easyimage_admin_options' );
 	}
 }
 
@@ -270,30 +270,42 @@ function easyimage_widget($args)
 function easyimage_control() 
 {
 	$easyimage_widget = get_option('easyimage_widget');
-	if (@$_POST['easyimage_submit']) 
+	if (isset($_POST['easyimage_submit'])) 
 	{
 		$easyimage_widget = $_POST['easyimage_widget'];
 		update_option('easyimage_widget', $easyimage_widget );
 	}
 	
-	echo '<p>Id:<br><input  style="width: 200px;" type="text" value="';
+	echo '<p>'.__('Id:', 'easy-image-slideshow').'<br><input  style="width: 200px;" type="text" value="';
 	echo $easyimage_widget . '" name="easyimage_widget" id="easyimage_widget" /></p>';
 	echo '<input type="hidden" id="easyimage_submit" name="easyimage_submit" value="1" />';
+		
+	echo '<p>';
+	_e('Check official website for more information', 'easy-image-slideshow');
+	?> <a target="_blank" href="<?php echo EASYIMAGE_FAV; ?>"><?php _e('click here', 'easy-image-slideshow'); ?></a></p><?php
 }
 
 function easyimage_init()
 {
 	if(function_exists('wp_register_sidebar_widget')) 
 	{
-		wp_register_sidebar_widget('Easy image slideshow', 'Easy image slideshow', 'easyimage_widget');
+		wp_register_sidebar_widget( __('Easy image slideshow', 'easy-image-slideshow'), 
+			__('Easy image slideshow', 'easy-image-slideshow'), 'easyimage_widget');
 	}
 	
 	if(function_exists('wp_register_widget_control')) 
 	{
-		wp_register_widget_control('Easy image slideshow', array('Easy image slideshow', 'widgets'), 'easyimage_control');
+		wp_register_widget_control( __('Easy image slideshow', 'easy-image-slideshow'), 
+			array( __('Easy image slideshow', 'easy-image-slideshow'), 'widgets'), 'easyimage_control');
 	} 
 }
 
+function easyimage_textdomain() 
+{
+	  load_plugin_textdomain( 'easy-image-slideshow', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+}
+
+add_action('plugins_loaded', 'easyimage_textdomain');
 add_shortcode( 'easy-image-slideshow', 'easyimage_shortcode' );
 add_action('wp_enqueue_scripts', 'easyimage_add_javascript_files');
 add_action('admin_menu', 'easyimage_add_to_menu');

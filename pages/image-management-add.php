@@ -22,21 +22,21 @@ if (isset($_POST['easyimage_form_submit']) && $_POST['easyimage_form_submit'] ==
 	$form['easyimage_location'] = isset($_POST['easyimage_location']) ? $_POST['easyimage_location'] : '';
 	if ($form['easyimage_location'] == '')
 	{
-		$easyimage_errors[] = __('Please enter the image folder (where you have your images).', easyimage_UNIQUE_NAME);
+		$easyimage_errors[] = __('Please enter the image folder (where you have your images).', 'easy-image-slideshow');
 		$easyimage_error_found = TRUE;
 	}
 	
 	$form['easyimage_width'] = isset($_POST['easyimage_width']) ? $_POST['easyimage_width'] : '';
 	if ($form['easyimage_width'] == '')
 	{
-		$easyimage_errors[] = __('Please enter width of the slideshow, only number.', easyimage_UNIQUE_NAME);
+		$easyimage_errors[] = __('Please enter width of the slideshow, only number.', 'easy-image-slideshow');
 		$easyimage_error_found = TRUE;
 	}
 	
 	$form['easyimage_height'] = isset($_POST['easyimage_height']) ? $_POST['easyimage_height'] : '';
 	if ($form['easyimage_height'] == '')
 	{
-		$easyimage_errors[] = __('Please enter height of the slideshow, only number.', easyimage_UNIQUE_NAME);
+		$easyimage_errors[] = __('Please enter height of the slideshow, only number.', 'easy-image-slideshow');
 		$easyimage_error_found = TRUE;
 	}
 	
@@ -54,7 +54,7 @@ if (isset($_POST['easyimage_form_submit']) && $_POST['easyimage_form_submit'] ==
 		);
 		$wpdb->query($sql);
 		
-		$easyimage_success = __('New details was successfully added.', easyimage_UNIQUE_NAME);
+		$easyimage_success = __('New details was successfully added.', 'easy-image-slideshow');
 		
 		// Reset the form fields
 		$form = array(
@@ -79,46 +79,50 @@ if ($easyimage_error_found == FALSE && strlen($easyimage_success) > 0)
 {
 	?>
 	  <div class="updated fade">
-		<p><strong><?php echo $easyimage_success; ?> <a href="<?php echo get_option('siteurl'); ?>/wp-admin/options-general.php?page=easy-image-slideshow">Click here</a> to view the details</strong></p>
+		<p><strong><?php echo $easyimage_success; ?> 
+		<a href="<?php echo EASYIMAGE_ADMIN_URL; ?>"><?php _e('Click here to view the details', 'easy-image-slideshow'); ?></a></strong></p>
 	  </div>
 	  <?php
 	}
 ?>
-<script language="JavaScript" src="<?php echo get_option('siteurl'); ?>/wp-content/plugins/easy-image-slideshow/inc/setting.js"></script>
+<script language="JavaScript" src="<?php echo EASYIMAGE_PLUGIN_URL; ?>/inc/setting.js"></script>
 <div class="form-wrap">
 	<div id="icon-edit" class="icon32 icon32-posts-post"><br></div>
-	<h2><?php echo easyimage_TITLE; ?></h2>
+	<h2><?php _e('Easy image slideshow', 'easy-image-slideshow'); ?></h2>
 	<form name="easyimage_form" method="post" action="#" onsubmit="return easyimage_submit()"  >
-      <h3>Add details</h3>
+      <h3><?php _e('Add details', 'easy-image-slideshow'); ?></h3>
       
-		<label for="tag-title">Image folder location</label>
+		<label for="tag-title"><?php _e('Image folder location', 'easy-image-slideshow'); ?></label>
 		<input name="easyimage_location" type="text" id="easyimage_location" value="" size="100" maxlength="1024" />
 		<p>Example: wp-content/plugins/easy-image-slideshow/images/</p>
 		
-		<label for="tag-title">Slideshow width</label>
+		<label for="tag-title"><?php _e('Slideshow width', 'easy-image-slideshow'); ?></label>
 		<input name="easyimage_width" type="text" id="easyimage_width" value="200" maxlength="4" />
-		<p>Please enter width of the slideshow, only number. (Ex: 200)</p>
+		<p><?php _e('Please enter width of the slideshow, only number.', 'easy-image-slideshow'); ?> (Ex: 200)</p>
 		
-		<label for="tag-title">Slideshow height</label>
+		<label for="tag-title"><?php _e('Slideshow height', 'easy-image-slideshow'); ?></label>
 		<input name="easyimage_height" type="text" id="easyimage_height" value="150" maxlength="4" />
-		<p>Please enter height of the slideshow, only number. (Ex: 150)</p>
+		<p><?php _e('Please enter height of the slideshow, only number.', 'easy-image-slideshow'); ?> (Ex: 150)</p>
 	  
-		<label for="tag-title">Random display</label>
+		<label for="tag-title"><?php _e('Random display', 'easy-image-slideshow'); ?></label>
 		<select name="easyimage_random" id="easyimage_random">
 			<option value='YES'>YES</option>
 			<option value='NO'>NO</option>
 		</select>
-		<p>Do you want to display images in random order?</p>
+		<p><?php _e('Do you want to display images in random order?', 'easy-image-slideshow'); ?></p>
 	  
       <input name="easyimage_id" id="easyimage_id" type="hidden" value="">
       <input type="hidden" name="easyimage_form_submit" value="yes"/>
       <p class="submit">
-        <input name="publish" lang="publish" class="button add-new-h2" value="Insert Details" type="submit" />&nbsp;
-        <input name="publish" lang="publish" class="button add-new-h2" onclick="easyimage_redirect()" value="Cancel" type="button" />&nbsp;
-        <input name="Help" lang="publish" class="button add-new-h2" onclick="easyimage_help()" value="Help" type="button" />
+        <input name="publish" lang="publish" class="button add-new-h2" value="<?php _e('Insert Details', 'easy-image-slideshow'); ?>" type="submit" />&nbsp;
+        <input name="publish" lang="publish" class="button add-new-h2" onclick="easyimage_redirect()" value="<?php _e('Cancel', 'easy-image-slideshow'); ?>" type="button" />&nbsp;
+        <input name="Help" lang="publish" class="button add-new-h2" onclick="easyimage_help()" value="<?php _e('Help', 'easy-image-slideshow'); ?>" type="button" />
       </p>
 	  <?php wp_nonce_field('easyimage_form_add'); ?>
     </form>
 </div>
-<p class="description"><?php echo easyimage_LINK; ?></p>
+<p class="description">
+	<?php _e('Check official website for more information', 'easy-image-slideshow'); ?>
+	<a target="_blank" href="<?php echo EASYIMAGE_FAV; ?>"><?php _e('click here', 'easy-image-slideshow'); ?></a><br />
+</p>
 </div>

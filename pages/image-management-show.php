@@ -18,7 +18,7 @@ if (isset($_POST['frm_easyimage_display']) && $_POST['frm_easyimage_display'] ==
 	
 	if ($result != '1')
 	{
-		?><div class="error fade"><p><strong>Oops, selected details doesn't exist (1).</strong></p></div><?php
+		?><div class="error fade"><p><strong><?php _e('Oops, selected details doesnt exist.', 'easy-image-slideshow'); ?></strong></p></div><?php
 	}
 	else
 	{
@@ -36,7 +36,7 @@ if (isset($_POST['frm_easyimage_display']) && $_POST['frm_easyimage_display'] ==
 			
 			//	Set success message
 			$easyimage_success_msg = TRUE;
-			$easyimage_success = __('Selected record was successfully deleted.', TinyCarousel_UNIQUE_NAME);
+			$easyimage_success = __('Selected record was successfully deleted.', 'easy-image-slideshow');
 		}
 	}
 	
@@ -48,36 +48,37 @@ if (isset($_POST['frm_easyimage_display']) && $_POST['frm_easyimage_display'] ==
 ?>
 <div class="wrap">
   <div id="icon-edit" class="icon32 icon32-posts-post"></div>
-    <h2><?php echo easyimage_TITLE; ?><a class="add-new-h2" href="<?php echo get_option('siteurl'); ?>/wp-admin/options-general.php?page=easy-image-slideshow&amp;ac=add">Add New</a></h2>
+    <h2><?php _e('Easy image slideshow', 'easy-image-slideshow'); ?>
+	<a class="add-new-h2" href="<?php echo EASYIMAGE_ADMIN_URL; ?>&amp;ac=add"><?php _e('Add New', 'easy-image-slideshow'); ?></a></h2>
     <div class="tool-box">
 	<?php
 		$sSql = "SELECT * FROM `".wp_easy_table."` order by easyimage_id desc";
 		$myData = array();
 		$myData = $wpdb->get_results($sSql, ARRAY_A);
 		?>
-		<script language="JavaScript" src="<?php echo get_option('siteurl'); ?>/wp-content/plugins/easy-image-slideshow/inc/setting.js"></script>
+		<script language="JavaScript" src="<?php echo EASYIMAGE_PLUGIN_URL; ?>/inc/setting.js"></script>
 		<form name="frm_easyimage_display" method="post">
       <table width="100%" class="widefat" id="straymanage">
         <thead>
           <tr>
             <th class="check-column" scope="col"><input type="checkbox" name="easyimage_group_item[]" /></th>
-			<th scope="col">Image folder</th>
-			<th scope="col">Short code</th>
-            <th scope="col">Slideshow Width</th>
-			<th scope="col">Slideshow Height</th>
-			<th scope="col">Random</th>
-			<th scope="col">Id</th>
+			<th scope="col"><?php _e('Image Folder', 'easy-image-slideshow'); ?></th>
+			<th scope="col"><?php _e('Short Code', 'easy-image-slideshow'); ?></th>
+            <th scope="col"><?php _e('Slideshow Width', 'easy-image-slideshow'); ?></th>
+			<th scope="col"><?php _e('Slideshow Height', 'easy-image-slideshow'); ?></th>
+			<th scope="col"><?php _e('Random', 'easy-image-slideshow'); ?></th>
+			<th scope="col"><?php _e('Id', 'easy-image-slideshow'); ?></th>
           </tr>
         </thead>
 		<tfoot>
           <tr>
             <th class="check-column" scope="col"><input type="checkbox" name="easyimage_group_item[]" /></th>
-			<th scope="col">Image folder</th>
-			<th scope="col">Short code</th>
-            <th scope="col">Slideshow Width</th>
-			<th scope="col">Slideshow Height</th>
-			<th scope="col">Random</th>
-			<th scope="col">Id</th>
+			<th scope="col"><?php _e('Image Folder', 'easy-image-slideshow'); ?></th>
+			<th scope="col"><?php _e('Short Code', 'easy-image-slideshow'); ?></th>
+            <th scope="col"><?php _e('Slideshow Width', 'easy-image-slideshow'); ?></th>
+			<th scope="col"><?php _e('Slideshow Height', 'easy-image-slideshow'); ?></th>
+			<th scope="col"><?php _e('Random', 'easy-image-slideshow'); ?></th>
+			<th scope="col"><?php _e('Id', 'easy-image-slideshow'); ?></th>
           </tr>
         </tfoot>
 		<tbody>
@@ -89,11 +90,11 @@ if (isset($_POST['frm_easyimage_display']) && $_POST['frm_easyimage_display'] ==
 				{
 					?>
 					<tr class="<?php if ($i&1) { echo'alternate'; } else { echo ''; }?>">
-						<td align="left"><input type="checkbox" value="<?php echo $data['easyimage_id']; ?>" name="easyimage_group_item[]"></th>
+						<td align="left"><input type="checkbox" value="<?php echo $data['easyimage_id']; ?>" name="easyimage_group_item[]"></td>
 						<td><?php echo $data['easyimage_location']; ?>
 						<div class="row-actions">
-							<span class="edit"><a title="Edit" href="<?php echo get_option('siteurl'); ?>/wp-admin/options-general.php?page=easy-image-slideshow&amp;ac=edit&amp;did=<?php echo $data['easyimage_id']; ?>">Edit</a> | </span>
-							<span class="trash"><a onClick="javascript:easyimage_delete('<?php echo $data['easyimage_id']; ?>')" href="javascript:void(0);">Delete</a></span> 
+							<span class="edit"><a title="Edit" href="<?php echo EASYIMAGE_ADMIN_URL; ?>&amp;ac=edit&amp;did=<?php echo $data['easyimage_id']; ?>"><?php _e('Edit', 'easy-image-slideshow'); ?></a> | </span>
+							<span class="trash"><a onClick="javascript:easyimage_delete('<?php echo $data['easyimage_id']; ?>')" href="javascript:void(0);"><?php _e('Delete', 'easy-image-slideshow'); ?></a></span> 
 						</div>
 						</td>
 						<td>[easy-image-slideshow id="<?php echo $data['easyimage_id']; ?>"]</td>
@@ -108,7 +109,7 @@ if (isset($_POST['frm_easyimage_display']) && $_POST['frm_easyimage_display'] ==
 			}
 			else
 			{
-				?><tr><td colspan="7" align="center">No records available.</td></tr><?php 
+				?><tr><td colspan="7" align="center"><?php _e('No records available.', 'easy-image-slideshow'); ?></td></tr><?php 
 			}
 			?>
 		</tbody>
@@ -118,17 +119,21 @@ if (isset($_POST['frm_easyimage_display']) && $_POST['frm_easyimage_display'] ==
       </form>	
 	  <div class="tablenav">
 	  <h2>
-	  <a class="button add-new-h2" href="<?php echo get_option('siteurl'); ?>/wp-admin/options-general.php?page=easy-image-slideshow&amp;ac=add">Add New</a>
-	  <a class="button add-new-h2" target="_blank" href="<?php echo easyimage_FAV; ?>">Help</a>
+	  <a class="button add-new-h2" href="<?php echo EASYIMAGE_ADMIN_URL; ?>&amp;ac=add"><?php _e('Add New', 'easy-image-slideshow'); ?></a>
+	  <a class="button add-new-h2" target="_blank" href="<?php echo EASYIMAGE_FAV; ?>"><?php _e('Help', 'easy-image-slideshow'); ?></a>
 	  </h2>
 	  </div>
 	  <div style="height:5px"></div>
-	<h3>Plugin configuration option</h3>
+	<h3><?php _e('Plugin configuration option', 'easy-image-slideshow'); ?></h3>
 	<ol>
-		<li>Drag and drop the widget to your sidebar.</li>
-		<li>Add the plugin in the posts or pages using short code.</li>
-		<li>Add directly in to the theme using PHP code.</li>
+		<li><?php _e('Drag and drop the widget to your sidebar.', 'easy-image-slideshow'); ?></li>
+		<li><?php _e('Add the plugin in the posts or pages using short code.', 'easy-image-slideshow'); ?></li>
+		<li><?php _e('Add directly in to the theme using PHP code.', 'easy-image-slideshow'); ?></li>
 	</ol>
-	<p class="description"><?php echo easyimage_LINK; ?><br />Don't upload your original images into plug-in folder. if you upload the images into plug-in folder, you may lose the images when you update the plug-in to next version.</p>
+	<p class="description">
+		<?php _e('Check official website for more information', 'easy-image-slideshow'); ?>
+		<a target="_blank" href="<?php echo EASYIMAGE_FAV; ?>"><?php _e('click here', 'easy-image-slideshow'); ?></a><br />
+		<?php _e('Dont upload your original images into plug-in folder. if you upload the images into plug-in folder, you may lose the images when you update the plug-in to next version.', 'easy-image-slideshow'); ?>
+	</p>
 	</div>
 </div>

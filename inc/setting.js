@@ -1,6 +1,6 @@
 /**
  *     Easy image slideshow
- *     Copyright (C) 2011 - 2013 www.gopiplus.com
+ *     Copyright (C) 2011 - 2014 www.gopiplus.com
  *     http://www.gopiplus.com/work/2012/06/20/easy-image-slideshow-wordpress-plugin/
  * 
  *     This program is free software: you can redistribute it and/or modify
