@@ -3,8 +3,8 @@
 Plugin Name: Easy image slideshow
 Plugin URI: http://www.gopiplus.com/work/2012/06/20/easy-image-slideshow-wordpress-plugin/
 Description: This is a lightweight JavaScript slideshow with manual navigation option. You can use this slideshow, if you need the manual navigation image gallery.
-Author: Gopi.R
-Version: 5.1
+Author: Gopi Ramasamy
+Version: 5.2
 Author URI: http://www.gopiplus.com/work/
 Donate link: http://www.gopiplus.com/work/2012/06/20/easy-image-slideshow-wordpress-plugin/
 Tags: easy, slideshow, images
@@ -76,10 +76,11 @@ function easyimage()
 			$path = "";
 			while ($f_file = readdir($f_dirHandle)) 
 			{
+				$f_file_nocase = $f_file;
 				$f_file = strtoupper($f_file);
 				if(!is_dir($f_file) && (strpos($f_file, '.JPG')>0 or strpos($f_file, '.GIF')>0 or strpos($f_file, '.PNG')>0)) 
 				{
-					$path = $path . "'" . $siteurl . $easyimage_location . $f_file . "',";
+					$path = $path . "'" . $siteurl . $easyimage_location . $f_file_nocase . "',";
 				}
 			}
 			closedir($f_dirHandle);
@@ -200,8 +201,8 @@ function easyimage_shortcode( $atts )
 			$path = "";
 			while ($f_file = readdir($f_dirHandle)) 
 			{
-				$f_file = strtoupper($f_file);
 				$f_file_nocase = $f_file;
+				$f_file = strtoupper($f_file);
 				if(!is_dir($f_file) && (strpos($f_file, '.JPG')>0 or strpos($f_file, '.GIF')>0 or strpos($f_file, '.PNG')>0)) 
 				{
 					$path = $path . "'" . $siteurl . $easyimage_location . $f_file_nocase . "',";

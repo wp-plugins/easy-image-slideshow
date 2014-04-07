@@ -5,8 +5,8 @@ Author URI: http://www.gopiplus.com/work/2012/06/20/easy-image-slideshow-wordpre
 Plugin URI: http://www.gopiplus.com/work/2012/06/20/easy-image-slideshow-wordpress-plugin/
 Tags: plugin, widget, image, slideshow, gallery
 Requires at least: 3.4
-Tested up to: 3.8
-Stable tag: 5.1
+Tested up to: 3.9
+Stable tag: 5.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -89,6 +89,12 @@ New admin layout.
 2. Now this plugin supports localization (or internationalization). i.e. option to translate into other languages. 
 Plugin *.po file (easy-image-slideshow.po) available in the languages folder.
 
+= Version 5.2 =
+
+1. Tested up to 3.9
+2. Small security update.
+3. Converting image name to upper case issue fixed.
+
 == Upgrade Notice ==
 
 = Version 1.0 =
@@ -122,3 +128,9 @@ New admin layout.
 1. Tested up to 3.8
 2. Now this plugin supports localization (or internationalization). i.e. option to translate into other languages. 
 Plugin *.po file (easy-image-slideshow.po) available in the languages folder.
+
+= Version 5.2 =
+
+1. Tested up to 3.9
+2. Small security update.
+3. Converting image name to upper case issue fixed.
