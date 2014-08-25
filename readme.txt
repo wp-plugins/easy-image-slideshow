@@ -99,6 +99,7 @@ Plugin *.po file (easy-image-slideshow.po) available in the languages folder.
 
 1. Tested up to 4.0
 
+
 == Upgrade Notice ==
 
 = Version 1.0 =
