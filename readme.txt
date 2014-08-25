@@ -5,8 +5,8 @@ Author URI: http://www.gopiplus.com/work/2012/06/20/easy-image-slideshow-wordpre
 Plugin URI: http://www.gopiplus.com/work/2012/06/20/easy-image-slideshow-wordpress-plugin/
 Tags: plugin, widget, image, slideshow, gallery
 Requires at least: 3.4
-Tested up to: 3.9
-Stable tag: 5.2
+Tested up to: 4.0
+Stable tag: 5.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -22,13 +22,13 @@ Check official website for live demo [http://www.gopiplus.com/work/2012/06/20/ea
 
 This is a lightweight JavaScript slideshow with manual navigation option. You can use this slideshow, if you required the manual navigation image gallery. we have tested this in all major bowers. this slideshow cache subsequent images, so we can get the even transition between image navigation. in the admin we have option to set the width and height of the images in the slideshow.
 
-Plugin configuration
+**Plugin configuration**
 
 * Drag and drop the widget
 * Paste the php code to your desired template location
 * Short code for pages and posts
 
-Plug-in features
+**Plug-in features**
 
 * Easy to customize
 * Support all browser
@@ -41,11 +41,11 @@ Plug-in features
 
 == Frequently Asked Questions ==
 
-= Q) How to arrange the width and height of the plugin? = 
+Q1) How to arrange the width and height of the plugin?
 
-= Q) Is possible to display different size images in the same slideshow? = 
+Q2) Is possible to display different size images in the same slideshow?
 
-= Q) Is Where to upload my images? = 
+Q3) Is Where to upload my images? 
 
 [Answer](http://www.gopiplus.com/work/2012/06/20/easy-image-slideshow-wordpress-plugin/ "Answer")
 
@@ -95,6 +95,10 @@ Plugin *.po file (easy-image-slideshow.po) available in the languages folder.
 2. Small security update.
 3. Converting image name to upper case issue fixed.
 
+= Version 5.3 =
+
+1. Tested up to 4.0
+
 == Upgrade Notice ==
 
 = Version 1.0 =
@@ -134,3 +138,7 @@ Plugin *.po file (easy-image-slideshow.po) available in the languages folder.
 1. Tested up to 3.9
 2. Small security update.
 3. Converting image name to upper case issue fixed.
+
+= Version 5.3 =
+
+1. Tested up to 4.0

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Easy image slideshow\n"
-"POT-Creation-Date: 2014-02-07 22:44+0800\n"
-"PO-Revision-Date: 2014-02-07 22:44+0800\n"
+"POT-Creation-Date: 2014-08-02 22:30+0800\n"
+"PO-Revision-Date: 2014-08-02 22:30+0800\n"
 "Last-Translator: \n"
 "Language-Team: www.gopiplus.com <www.gopiplus.com>\n"
 "MIME-Version: 1.0\n"
@@ -13,178 +13,175 @@ msgstr ""
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SearchPath-0: ..\n"
 
-#: ../easy-image-slideshow.php:255 ../easy-image-slideshow.php:256
-#: ../easy-image-slideshow.php:292 ../easy-image-slideshow.php:293
-#: ../easy-image-slideshow.php:298 ../easy-image-slideshow.php:299
-#: ../pages/image-management-add.php:91 ../pages/image-management-edit.php:113
-#: ../pages/image-management-show.php:51
+#: ../easy-image-slideshow.php:256 ../easy-image-slideshow.php:257
+#: ../easy-image-slideshow.php:293 ../easy-image-slideshow.php:294
+#: ../easy-image-slideshow.php:299 ../easy-image-slideshow.php:300
+#: ../pages/image-management-add.php:92 ../pages/image-management-edit.php:114
+#: ../pages/image-management-show.php:52
 msgid "Easy image slideshow"
 msgstr ""
 
-#: ../easy-image-slideshow.php:279
+#: ../easy-image-slideshow.php:280
 msgid "Id:"
-msgstr ""
-
-#: ../easy-image-slideshow.php:284
-msgid "Check official website for more info"
 msgstr ""
 
 #: ../easy-image-slideshow.php:285 ../pages/image-management-add.php:126
 #: ../pages/image-management-edit.php:148
 #: ../pages/image-management-show.php:135
+msgid "Check official website for more information"
+msgstr ""
+
+#: ../easy-image-slideshow.php:286 ../pages/image-management-add.php:127
+#: ../pages/image-management-edit.php:149
+#: ../pages/image-management-show.php:136
 msgid "click here"
 msgstr ""
 
-#: ../pages/image-management-add.php:25 ../pages/image-management-edit.php:53
+#: ../pages/image-management-add.php:26 ../pages/image-management-edit.php:54
 msgid "Please enter the image folder (where you have your images)."
 msgstr ""
 
-#: ../pages/image-management-add.php:32 ../pages/image-management-add.php:101
-#: ../pages/image-management-edit.php:60
-#: ../pages/image-management-edit.php:123
+#: ../pages/image-management-add.php:33 ../pages/image-management-add.php:102
+#: ../pages/image-management-edit.php:61
+#: ../pages/image-management-edit.php:124
 msgid "Please enter width of the slideshow, only number."
 msgstr ""
 
-#: ../pages/image-management-add.php:39 ../pages/image-management-add.php:105
-#: ../pages/image-management-edit.php:67
-#: ../pages/image-management-edit.php:127
+#: ../pages/image-management-add.php:40 ../pages/image-management-add.php:106
+#: ../pages/image-management-edit.php:68
+#: ../pages/image-management-edit.php:128
 msgid "Please enter height of the slideshow, only number."
 msgstr ""
 
-#: ../pages/image-management-add.php:57
+#: ../pages/image-management-add.php:58
 msgid "New details was successfully added."
 msgstr ""
 
-#: ../pages/image-management-add.php:83 ../pages/image-management-edit.php:105
+#: ../pages/image-management-add.php:84 ../pages/image-management-edit.php:106
 msgid "Click here to view the details"
 msgstr ""
 
-#: ../pages/image-management-add.php:93
+#: ../pages/image-management-add.php:94
 msgid "Add details"
 msgstr ""
 
-#: ../pages/image-management-add.php:95 ../pages/image-management-edit.php:117
+#: ../pages/image-management-add.php:96 ../pages/image-management-edit.php:118
 msgid "Image folder location"
 msgstr ""
 
-#: ../pages/image-management-add.php:99 ../pages/image-management-edit.php:121
+#: ../pages/image-management-add.php:100
+#: ../pages/image-management-edit.php:122
 msgid "Slideshow width"
 msgstr ""
 
-#: ../pages/image-management-add.php:103
-#: ../pages/image-management-edit.php:125
+#: ../pages/image-management-add.php:104
+#: ../pages/image-management-edit.php:126
 msgid "Slideshow height"
 msgstr ""
 
-#: ../pages/image-management-add.php:107
-#: ../pages/image-management-edit.php:129
+#: ../pages/image-management-add.php:108
+#: ../pages/image-management-edit.php:130
 msgid "Random display"
 msgstr ""
 
-#: ../pages/image-management-add.php:112
-#: ../pages/image-management-edit.php:134
+#: ../pages/image-management-add.php:113
+#: ../pages/image-management-edit.php:135
 msgid "Do you want to display images in random order?"
 msgstr ""
 
-#: ../pages/image-management-add.php:117
-msgid "Insert Details"
-msgstr ""
-
 #: ../pages/image-management-add.php:118
-#: ../pages/image-management-edit.php:140
-msgid "Cancel"
+msgid "Insert Details"
 msgstr ""
 
 #: ../pages/image-management-add.php:119
 #: ../pages/image-management-edit.php:141
-#: ../pages/image-management-show.php:123
+msgid "Cancel"
+msgstr ""
+
+#: ../pages/image-management-add.php:120
+#: ../pages/image-management-edit.php:142
+#: ../pages/image-management-show.php:124
 msgid "Help"
 msgstr ""
 
-#: ../pages/image-management-add.php:125
-#: ../pages/image-management-edit.php:147
-#: ../pages/image-management-show.php:134
-msgid "Check official website for more information"
-msgstr ""
-
-#: ../pages/image-management-edit.php:16 ../pages/image-management-show.php:21
+#: ../pages/image-management-edit.php:17 ../pages/image-management-show.php:22
 msgid "Oops, selected details doesnt exist."
 msgstr ""
 
-#: ../pages/image-management-edit.php:88
+#: ../pages/image-management-edit.php:89
 msgid "Details was successfully updated."
 msgstr ""
 
-#: ../pages/image-management-edit.php:115
+#: ../pages/image-management-edit.php:116
 msgid "Update details"
 msgstr ""
 
-#: ../pages/image-management-edit.php:139
+#: ../pages/image-management-edit.php:140
 msgid "Update Details"
 msgstr ""
 
-#: ../pages/image-management-show.php:39
+#: ../pages/image-management-show.php:40
 msgid "Selected record was successfully deleted."
 msgstr ""
 
-#: ../pages/image-management-show.php:52
-#: ../pages/image-management-show.php:122
+#: ../pages/image-management-show.php:53
+#: ../pages/image-management-show.php:123
 msgid "Add New"
 msgstr ""
 
-#: ../pages/image-management-show.php:65 ../pages/image-management-show.php:76
+#: ../pages/image-management-show.php:66 ../pages/image-management-show.php:77
 msgid "Image Folder"
 msgstr ""
 
-#: ../pages/image-management-show.php:66 ../pages/image-management-show.php:77
+#: ../pages/image-management-show.php:67 ../pages/image-management-show.php:78
 msgid "Short Code"
 msgstr ""
 
-#: ../pages/image-management-show.php:67 ../pages/image-management-show.php:78
+#: ../pages/image-management-show.php:68 ../pages/image-management-show.php:79
 msgid "Slideshow Width"
 msgstr ""
 
-#: ../pages/image-management-show.php:68 ../pages/image-management-show.php:79
+#: ../pages/image-management-show.php:69 ../pages/image-management-show.php:80
 msgid "Slideshow Height"
 msgstr ""
 
-#: ../pages/image-management-show.php:69 ../pages/image-management-show.php:80
+#: ../pages/image-management-show.php:70 ../pages/image-management-show.php:81
 msgid "Random"
 msgstr ""
 
-#: ../pages/image-management-show.php:70 ../pages/image-management-show.php:81
+#: ../pages/image-management-show.php:71 ../pages/image-management-show.php:82
 msgid "Id"
 msgstr ""
 
-#: ../pages/image-management-show.php:96
+#: ../pages/image-management-show.php:97
 msgid "Edit"
 msgstr ""
 
-#: ../pages/image-management-show.php:97
+#: ../pages/image-management-show.php:98
 msgid "Delete"
 msgstr ""
 
-#: ../pages/image-management-show.php:112
+#: ../pages/image-management-show.php:113
 msgid "No records available."
 msgstr ""
 
-#: ../pages/image-management-show.php:127
+#: ../pages/image-management-show.php:128
 msgid "Plugin configuration option"
 msgstr ""
 
-#: ../pages/image-management-show.php:129
+#: ../pages/image-management-show.php:130
 msgid "Drag and drop the widget to your sidebar."
 msgstr ""
 
-#: ../pages/image-management-show.php:130
+#: ../pages/image-management-show.php:131
 msgid "Add the plugin in the posts or pages using short code."
 msgstr ""
 
-#: ../pages/image-management-show.php:131
+#: ../pages/image-management-show.php:132
 msgid "Add directly in to the theme using PHP code."
 msgstr ""
 
-#: ../pages/image-management-show.php:136
+#: ../pages/image-management-show.php:137
 msgid ""
 "Dont upload your original images into plug-in folder. if you upload the "
 "images into plug-in folder, you may lose the images when you update the plug-"
