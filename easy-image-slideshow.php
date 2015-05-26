@@ -4,7 +4,7 @@ Plugin Name: Easy image slideshow
 Plugin URI: http://www.gopiplus.com/work/2012/06/20/easy-image-slideshow-wordpress-plugin/
 Description: This is a lightweight JavaScript slideshow with manual navigation option. You can use this slideshow, if you need the manual navigation image gallery.
 Author: Gopi Ramasamy
-Version: 5.4
+Version: 5.5
 Author URI: http://www.gopiplus.com/work/
 Donate link: http://www.gopiplus.com/work/2012/06/20/easy-image-slideshow-wordpress-plugin/
 Tags: easy, slideshow, images
