@@ -4,6 +4,7 @@
 if (isset($_POST['frm_easyimage_display']) && $_POST['frm_easyimage_display'] == 'yes')
 {
 	$did = isset($_GET['did']) ? $_GET['did'] : '0';
+	if(!is_numeric($did)) { die('<p>Are you sure you want to do this?</p>'); }
 	
 	$easyimage_success = '';
 	$easyimage_success_msg = FALSE;
@@ -62,7 +63,6 @@ if (isset($_POST['frm_easyimage_display']) && $_POST['frm_easyimage_display'] ==
       <table width="100%" class="widefat" id="straymanage">
         <thead>
           <tr>
-            <th class="check-column" scope="col"><input type="checkbox" name="easyimage_group_item[]" /></th>
 			<th scope="col"><?php _e('Image Folder', 'easy-image-slideshow'); ?></th>
 			<th scope="col"><?php _e('Short Code', 'easy-image-slideshow'); ?></th>
             <th scope="col"><?php _e('Slideshow Width', 'easy-image-slideshow'); ?></th>
@@ -73,7 +73,6 @@ if (isset($_POST['frm_easyimage_display']) && $_POST['frm_easyimage_display'] ==
         </thead>
 		<tfoot>
           <tr>
-            <th class="check-column" scope="col"><input type="checkbox" name="easyimage_group_item[]" /></th>
 			<th scope="col"><?php _e('Image Folder', 'easy-image-slideshow'); ?></th>
 			<th scope="col"><?php _e('Short Code', 'easy-image-slideshow'); ?></th>
             <th scope="col"><?php _e('Slideshow Width', 'easy-image-slideshow'); ?></th>
@@ -91,7 +90,6 @@ if (isset($_POST['frm_easyimage_display']) && $_POST['frm_easyimage_display'] ==
 				{
 					?>
 					<tr class="<?php if ($i&1) { echo'alternate'; } else { echo ''; }?>">
-						<td align="left"><input type="checkbox" value="<?php echo $data['easyimage_id']; ?>" name="easyimage_group_item[]"></td>
 						<td><?php echo $data['easyimage_location']; ?>
 						<div class="row-actions">
 							<span class="edit"><a title="Edit" href="<?php echo EASYIMAGE_ADMIN_URL; ?>&amp;ac=edit&amp;did=<?php echo $data['easyimage_id']; ?>"><?php _e('Edit', 'easy-image-slideshow'); ?></a> | </span>
@@ -110,7 +108,7 @@ if (isset($_POST['frm_easyimage_display']) && $_POST['frm_easyimage_display'] ==
 			}
 			else
 			{
-				?><tr><td colspan="7" align="center"><?php _e('No records available.', 'easy-image-slideshow'); ?></td></tr><?php 
+				?><tr><td colspan="6" align="center"><?php _e('No records available.', 'easy-image-slideshow'); ?></td></tr><?php 
 			}
 			?>
 		</tbody>
